@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물리실험설계도우미</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content-wrapper">
+                <div class="header-content">
+                    <div class="logo-area">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                        </div>
+                        <h1>물리실험설계도우미</h1>
+                    </div>
+                    <p class="subtitle">교육과정 선택만으로 실험 설계안을 생성합니다</p>
+                </div>
+                <div class="api-key-area">
+                    <input type="password" id="api-key-input" placeholder="Gemini API Key 입력" autocomplete="off">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="selection-panel pane">
+                <div class="section-title">
+                    <h2>교육과정 선택</h2>
+                    <span class="badge">필수</span>
+                </div>
+                
+                <div class="dropdown-group">
+                    <div class="form-group">
+                        <label for="grade-select">1. 학년</label>
+                        <div class="select-wrapper">
+                            <select id="grade-select">
+                                <option value="" disabled selected>학년을 선택하세요</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject-select">2. 과목</label>
+                        <div class="select-wrapper">
+                            <select id="subject-select" disabled>
+                                <option value="" disabled selected>과목을 선택하세요</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unit-select">3. 단원</label>
+                        <div class="select-wrapper">
+                            <select id="unit-select" disabled>
+                                <option value="" disabled selected>단원을 선택하세요</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group content-elements-group">
+                    <label>4. 내용요소</label>
+                    <div id="content-elements-container" class="elements-grid">
+                        <div class="empty-state">이전 항목들을 먼저 선택해주세요.</div>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button id="generate-btn" class="primary-btn" disabled>
+                        <span>실험 설계 생성</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Result Panel -->
+            <section class="result-panel pane">
+                <div class="section-title">
+                    <h2>설계 결과</h2>
+                </div>
+                <div id="result-area" class="result-content empty">
+                    <div class="result-placeholder">
+                        <div class="placeholder-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <line x1="10" y1="9" x2="8" y2="9"></line>
+                            </svg>
+                        </div>
+                        <p>선택을 완료하고 생성 버튼을 눌러주세요.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="curriculum.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
