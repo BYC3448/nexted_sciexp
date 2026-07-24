@@ -274,7 +274,7 @@ function checkApiKeyStatus() {
     apiKeyInput.value = apiKey;
   } else {
     apiStatusBtn.classList.remove("configured");
-    apiStatusText.textContent = "API 키 설정 필요";
+    apiStatusText.textContent = "API 키를 입력하세요";
     apiKeyInput.value = "";
   }
   updateGenerateButtonState();
